@@ -17,8 +17,10 @@ module.exports = async (req, res) => {
     let b;
     try { b = await body(req, 100000); } catch (e) { return send(res, 400, { error: "Could not read that." }); }
     if (b && b.mine) {
-      const { state } = await db.read();
-      return send(res, 200, Object.assign({ enabled: true }, L.mineView(state, { orders: keys(b.mine.orders), threads: keys(b.mine.threads) })));
+      // Nothing changed since this device last looked: answer in a few bytes.
+      if (b.since && (await db.version()) === Number(b.since)) return send(res, 200, { enabled: true, same: true, version: Number(b.since) });
+      const { state, version } = await db.read();
+      return send(res, 200, Object.assign({ enabled: true, version }, L.mineView(state, { orders: keys(b.mine.orders), threads: keys(b.mine.threads) })));
     }
     if (!L.isCOp(b && b.cop)) return send(res, 400, { error: "Could not read that." });
     const r = await db.mutate((s) => L.applyCustomer(s, b.cop, Date.now()));

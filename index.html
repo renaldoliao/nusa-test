@@ -956,6 +956,81 @@ body.hdr-away .tabs{top:env(safe-area-inset-top,0px)}
 .wimg{transition:opacity 1s var(--ease),transform 1.8s var(--ease)}
 .cart.bump b{animation:bump .6s var(--ease)}
 @media(prefers-reduced-motion:reduce){.rv2{opacity:1!important;transform:none!important}#app.leaving{opacity:1;transform:none}}
+
+/* ===== v10: richer, deeper, same character ===== */
+:root{--ink:#111b0a;--mute:#454e3c;--line:rgba(17,27,10,.2);--cream:#f2eee2;--paper:#faf8f1;--sage:#d6e2bf}
+body{color:var(--ink)}
+.sage{background:var(--sage);color:var(--ink)}
+.sage h2,.sage h1{color:var(--forest)}
+.sage .k{color:var(--forest)}
+.sage .facts3{border-color:var(--line)}
+.sage .loc{background:var(--paper)}
+.loc{border-top:0;box-shadow:inset 0 3px 0 var(--forest)}
+.st-ph::before{border-color:rgba(67,119,0,.5)}
+/* hero: more photo, deeper type */
+.hphoto{height:clamp(320px,60vh,660px);background-position:50% 46%}
+.hero2{background:var(--paper)}
+.hero2 .lede{color:var(--mute)}
+/* the market chooser becomes the deep pandan night band */
+.ways.night{background:var(--night);color:#f2eee2}
+.ways h2{color:#fff}
+.ways .k,.ways.night .k{color:var(--pandan)}
+.ways .intro{color:rgba(242,238,226,.75)}
+.ways .wlist,.ways .wopt{border-color:rgba(242,238,226,.18)}
+.ways .wopt{opacity:.55}.ways .wopt.on{opacity:1}.ways .wopt span{white-space:nowrap}
+.ways .wopt::before{background:var(--pandan)}
+.wcard{background:var(--paper)}
+.wcard .btn-ink{background:var(--forest)}
+.mq{background:var(--forest)}
+/* dish list: every dish shows its photo */
+.drow{grid-template-columns:96px minmax(0,1.25fr) minmax(0,1fr) auto auto}
+.dthumb{width:96px;height:96px;border-radius:50%;background-size:cover;background-position:center;box-shadow:0 0 0 1px rgba(67,119,0,.35),0 0 0 5px var(--cream),0 0 0 6px rgba(67,119,0,.18);transition:transform .9s var(--ease)}
+@media(hover:hover){.drow:hover .dthumb{transform:scale(1.06) rotate(-4deg)}}
+@media(max-width:860px){.drow{grid-template-columns:72px minmax(0,1fr) auto}.dthumb{width:72px;height:72px}.drow .dname{grid-column:auto}.drow p{grid-column:1/-1}}
+@media(hover:none){.drow .dimg{display:none}}
+.dlist{border-top-color:var(--forest)}
+.drow .pr{color:var(--forest)}
+/* richer surfaces and lines */
+.mrow,.drow,.tray{border-color:var(--line)}
+.mcat-h{border-bottom-color:var(--forest)}
+.th{box-shadow:0 0 0 1px rgba(67,119,0,.4),0 0 0 6px var(--cream),0 0 0 7px rgba(67,119,0,.2)}
+.disc{box-shadow:inset 0 -18px 34px rgba(0,0,0,.2)}
+.pan .en{color:var(--forest)}
+.cat::after{background:linear-gradient(90deg,rgba(20,40,10,0) 20%,rgba(20,40,10,.92) 60%)}
+.rev .q{color:var(--forest)}
+.stars{color:var(--forest)}
+.foot{background:var(--night)}
+
+/* market chooser: calm crossfade, no jumps */
+.wcard{overflow:hidden;transition:height .55s var(--ease)}
+.wcard>*{transition:opacity .35s var(--ease),transform .5s var(--ease)}
+.wcard.swap>*{opacity:0;transform:translateY(8px);transition:opacity .2s var(--ease-io),transform .2s var(--ease-io)}
+.wimg{transform:scale(1.03);transition:opacity 1.1s var(--ease),transform 2.4s var(--ease)}
+.wimg.on{transform:none}
+.wopt{transition:opacity .5s var(--ease),padding .7s var(--ease)}
+.wopt::before{transition:transform .6s var(--ease)}
+.pan .in button{text-align:left;line-height:1.35}
+:root{--kawung-lt:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23f2eee2%27 stroke-opacity=%270.09%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23f2eee2%27 fill-opacity=%270.09%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--kawung-dk:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23437700%27 stroke-opacity=%270.12%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23437700%27 fill-opacity=%270.12%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--kawung-wh:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23ffffff%27 stroke-opacity=%270.14%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.14%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--tumpal:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2718%27 viewBox=%270 0 24 18%27%3E%3Cpath d=%27M0 18 L12 2 L24 18 Z%27 fill=%27%23437700%27/%3E%3Cpath d=%27M6 18 L12 9 L18 18 Z%27 fill=%27none%27 stroke=%27%231a3310%27 stroke-opacity=%27.5%27 stroke-width=%271%27/%3E%3Ccircle cx=%2712%27 cy=%2715%27 r=%271.2%27 fill=%27%231a3310%27 fill-opacity=%27.6%27/%3E%3C/svg%3E");--tumpal-dk:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2718%27 viewBox=%270 0 24 18%27%3E%3Cpath d=%27M0 18 L12 2 L24 18 Z%27 fill=%27%231a3310%27/%3E%3Cpath d=%27M6 18 L12 9 L18 18 Z%27 fill=%27none%27 stroke=%27%23437700%27 stroke-opacity=%27.5%27 stroke-width=%271%27/%3E%3Ccircle cx=%2712%27 cy=%2715%27 r=%271.2%27 fill=%27%23437700%27 fill-opacity=%27.6%27/%3E%3C/svg%3E")}
+/* ===== v11: a touch of batik ===== */
+.foot{position:relative;background:var(--night) var(--kawung-lt);background-size:56px 56px;padding-top:clamp(5rem,9vw,7.5rem);padding-bottom:2.2rem;margin-top:0;overflow:visible}
+.foot>.wrap{overflow:hidden}
+.foot::before{content:"";position:absolute;left:0;right:0;top:-22px;height:22px;background:var(--tumpal-dk) repeat-x left bottom;background-size:28px 22px}
+.foot .ft-g{position:relative}
+.foot h3{font-size:clamp(2.6rem,4.6vw,4rem);line-height:.95;letter-spacing:-.03em}
+.nl input{background:rgba(242,238,226,.06);border-color:rgba(242,238,226,.22);transition:border-color .4s var(--ease),background .4s var(--ease)}
+.nl input:focus{outline:none;border-color:var(--pandan);background:rgba(242,238,226,.1)}
+.foot ul{gap:.6rem}
+.foot ul button,.foot li{opacity:.82}
+.foot ul button{background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;padding-bottom:2px;transition:background-size .55s var(--ease),opacity .3s}
+.foot ul button:hover{background-size:100% 1px;opacity:1;color:#fff}
+.ft-mark{display:grid;justify-items:center;gap:1.1rem;text-align:center;margin-top:clamp(4rem,8vw,6rem);padding-block:2.6rem;border-top:1px solid rgba(242,238,226,.14);border-bottom:1px solid rgba(242,238,226,.14)}
+.ft-mark img{width:92px;height:92px;object-fit:contain}
+.ft-mark p{max-width:34ch;font-style:italic;font-size:1.15rem;line-height:1.45;color:rgba(242,238,226,.78)}
+.legal{margin-top:1.6rem;padding-top:0;border-top:0;opacity:.6}
+.word{display:none}
+.ways.night{background:var(--night) var(--kawung-lt);background-size:56px 56px}
+.lap.dk{background:var(--forest) var(--kawung-wh);background-size:56px 56px}
+.mq{position:relative}
 </style>
 
 <header id="hdr"></header>
@@ -1165,8 +1240,8 @@ function footer(){
  <div><h4>Visit</h4><ul><li>Ferry Plaza Farmers Market</li><li>Saturdays, 8 am to 2 pm</li><li style="margin-top:.6rem">Nusa Kitchen, Dogpatch</li><li>Thursday pickup, 5 to 6 pm</li></ul></div>
  <div><h4>Shop</h4><ul><li><button data-act="go" data-to="menu">Menu</button></li><li><button data-act="go" data-to="order">Pickup and delivery</button></li><li><button data-act="go" data-to="catering">Catering</button></li><li><button data-act="go" data-to="story">Our story and careers</button></li></ul></div>
  <div><h4>Say hello</h4><ul><li class="sel">info@nusasf.com</li><li class="sel">(408) 304-7027</li><li>Instagram · Facebook</li></ul></div></div>
- <div class="legal"><span>© Nusa SF, since 2013</span><button data-act="go" data-to="terms">Terms of service</button><button data-act="go" data-to="privacy">Privacy policy</button><span>A La Cocina member business</span></div>
- <div class="word" aria-hidden="true">Nusa</div></div></footer>`}
+ <div class="ft-mark"><img decoding="async" loading="lazy" src="${IMG.logo}" alt="Nusa, classic flavors of Indonesia"><p>Made by hand in San Francisco, from the recipes Chef Jennifer grew up with in Indonesia.</p></div>
+ <div class="legal"><span>© Nusa SF, since 2013</span><button data-act="go" data-to="terms">Terms of service</button><button data-act="go" data-to="privacy">Privacy policy</button><span>A La Cocina member business</span></div></div></footer>`}
 
 /* ---- pages ---- */
 const pages={};
@@ -1174,7 +1249,7 @@ pages.home=()=>{
  const mk=MK(),kt=KT(),w=WAYS.find(x=>x.id===S.way);
  const names=['Lapis legit','Klepon','Kue lapis','Ketan srikaya','Rendang','Lemper ayam','Pastel','Bingka','Nastar','Acar'];
  const mq=names.map(n=>`<span>${n}</span><i></i>`).join('');
- const drow=(id,img,name,aka)=>{const i=byId(id);if(!i)return'';return `<li class="drow" data-img="${img}"><div class="dimg" ${bg(img)}></div><div class="dname"><h3>${name}</h3><span class="aka">${aka}</span></div><p>${i.taste}</p><span class="pr">${money(i.price)}${i.max?'+':''}</span><button class="addc" data-act="add" data-id="${id}">Add</button></li>`};
+ const drow=(id,img,name,aka)=>{const i=byId(id);if(!i)return'';return `<li class="drow" data-img="${img}"><div class="dimg" ${bg(img)}></div><span class="dthumb" ${bg(img)} aria-hidden="true"></span><div class="dname"><h3>${name}</h3><span class="aka">${aka}</span></div><p>${i.taste}</p><span class="pr">${money(i.price)}${i.max?'+':''}</span><button class="addc" data-act="add" data-id="${id}">Add</button></li>`};
  let layers='';for(let n=0;n<22;n++)layers+=`<div class="layer ${n%2?'b':'a'}" style="--d:${((21-n)*45)}ms"></div>`;
  return `<section class="hero2"><div class="hphoto" ${bg('hero')} role="img" aria-label="Rows of Nusa dessert boxes with 1000 layer cake, kue lapis and nastar"><div class="badge" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="bp" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs><text><textPath href="#bp" textLength="500" lengthAdjust="spacing">Handmade in San Francisco · Since 2013 · Classic flavors of Indonesia ·</textPath></text></svg><img decoding="async" loading="lazy" src="${IMG.logo}" alt=""></div></div>
  <div class="wrap hcopy"><span class="k fade-in">Indonesian kitchen in San Francisco, since 2013</span>
@@ -1196,12 +1271,12 @@ pages.home=()=>{
  <div class="acts"><button class="btn btn-gold" data-act="add" data-id="lapis">Add a 1000 Layer Cake</button><button class="tl" data-act="qv" data-id="lapis">Ingredients and storage</button></div></div>
  <div class="cakewrap"><button class="cake" id="cake" data-act="cake" aria-label="Pull the layers apart"><div class="crust"></div>${layers}</button><div class="plate"></div><span class="cakecap"><span class="cap-hover">Hover to pull the layers apart</span><span class="cap-touch">Tap to pull the layers apart</span></span></div></div></section>
  <section class="gal" id="gal"><div class="gal-st"><div class="gtrack" id="gtrack"><div class="gintro"><span class="k">From our kitchen</span><h2>Inside <em>the kitchen.</em></h2><p>Small batches, made by hand in Dogpatch from family recipes. Here’s what leaves the kitchen each week.</p></div>${GAL.map(g=>`<figure class="gslide"><div class="im" ${bg(g.img)} role="img" aria-label="${g.t}"></div><h3>${g.t}</h3><p>${g.d}</p></figure>`).join('')}</div><div class="gprog"><i id="gbar"></i></div><span class="ghint">Keep scrolling</span></div></section>
- <section class="pp sec"><div class="wrap st-g"><div class="st-ph"><div class="im rv" ${bg('plates')} role="img" aria-label="Kue lapis, 1000 layer cake and klepon plated with orchids"></div><img class="seal" src="${IMG.diamond}" alt=""></div>
+ <section class="sage sec"><div class="wrap st-g"><div class="st-ph"><div class="im rv" ${bg('plates')} role="img" aria-label="Kue lapis, 1000 layer cake and klepon plated with orchids"></div><img class="seal" src="${IMG.diamond}" alt=""></div>
  <div class="st-tx"><span class="k">Our story</span><p class="st-big" id="reveal">${W('Chef Jennifer Huang grew up in Indonesia. When her family moved to the Bay Area, the food she grew up with was nowhere to be found.')} <em>${W('So she started making it.')}</em></p><p class="s">Nusa began in 2013 as 1000 Layer Bakery. Today we make classic Indonesian desserts, snacks and savory dishes by hand, from traditional home-style recipes, to bring Indonesian food to more of the Bay.</p>
  <div class="facts3"><div><b>2013</b><span>Founded as 1000 Layer Bakery</span></div><div><b>La Cocina</b><span>Member of the Mission District food incubator</span></div><div><b>Saturdays</b><span>At the Ferry Plaza Farmers Market</span></div></div><div style="margin-top:2rem"><button class="tl" data-act="go" data-to="story">Read our story</button></div></div></div></section>
  <section class="cat"><div class="bg" id="par" ${bg('rendang')} role="img" aria-label="Beef rendang on banana leaf"></div><div class="wrap cat-in"><div><span class="k">Catering</span><h2>Feed the whole office, <em>the Indonesian way.</em></h2><p>Easy, premium Indonesian catering for corporate lunches, events and weddings. Rendang trays, plated desserts and individual dessert boxes.</p><button class="btn btn-gold mag" data-act="go" data-to="catering">Build a catering quote</button></div></div></section>
  <section class="lt sec rev"><div class="wrap rev-g"><span class="k">Kind words</span><div><p class="q">“A taste of home for those who grew up with it, and a revelation for everyone else.”</p><div class="stars" aria-label="Five stars">★★★★★</div><div class="who">Customer name, Google review</div><span class="flag">Sample quote. Swap in a real review before launch.</span></div></div></section>
- <section class="pp sec"><div class="wrap"><div class="sh" style="margin-bottom:0"><div><span class="k">Order ahead, or just stop by</span><h2>Come <em>find us.</em></h2></div><p>Market hours and kitchen pickup in San Francisco time.</p></div><div class="vis-g">
+ <section class="sage sec"><div class="wrap"><div class="sh" style="margin-bottom:0"><div><span class="k">Order ahead, or just stop by</span><h2>Come <em>find us.</em></h2></div><p>Market hours and kitchen pickup in San Francisco time.</p></div><div class="vis-g">
  <div class="loc"><div class="status"><span class="dot${mk&&mk.open?' live':''}"></span>${mk?(mk.open?'Open now until 2 pm':'Opens '+(mk.today?'today':fmtLong(mk.start))+' at 8 am'):''}</div><h3>Ferry Plaza Farmers Market</h3><span class="addr">1 Ferry Building #50, San Francisco, CA 94111</span><dl class="hrs"><dt>Saturday</dt><dd>8:00 am to 2:00 pm</dd><dt>Sunday to Friday</dt><dd>Closed</dd></dl><a class="tl" href="https://www.google.com/maps/search/?api=1&query=Ferry+Plaza+Farmers+Market" target="_blank" rel="noopener">Get directions</a></div>
  <div class="loc"><div class="status"><span class="dot${kt&&kt.open?' live':''}"></span>${kt?(kt.open?'Pickup open now until 6 pm':'Next pickup '+(kt.today?'today':fmtLong(kt.start))+' at 5 pm'):''}</div><h3>Nusa Kitchen, Dogpatch</h3><span class="addr">3450 3rd St, Suite 4A, San Francisco, CA 94124</span><dl class="hrs"><dt>Thursday</dt><dd>5:00 to 6:00 pm, pre-orders</dd><dt>Phone</dt><dd class="sel">(408) 304-7027</dd></dl><a class="tl" href="https://www.google.com/maps/search/?api=1&query=3450+3rd+St+San+Francisco" target="_blank" rel="noopener">Get directions</a></div></div></div></section>${footer()}`};
 function wcard(w){return `<div><h3>${w.t}</h3><p>${w.d}</p><dl><dt>When</dt><dd>${w.when}</dd><dt>Where</dt><dd>${w.where}</dd></dl></div><button class="btn btn-ink" data-act="${w.id==='catering'?'go':'start'}" data-to="${w.id==='catering'?'catering':'order'}" data-m="${w.id}">${w.cta}</button>`}
@@ -1320,8 +1395,9 @@ async function refreshTrack(){
  if(S.route!=='track'||!S.trk||trkBusy)return;trkBusy=true;
  try{
   const k=keys();if(!k.orders.some(x=>x.id===S.trk.id))addKey('orders',S.trk.id,S.trk.token);
-  const d=SHOP.mode==='live'?await api({mine:{orders:[S.trk],threads:[]}}):L.mineView(localState(),{orders:[S.trk],threads:[]});
+  const d=SHOP.mode==='live'?await api({mine:{orders:[S.trk],threads:[]},since:S.trkData?S.trkV:0}):L.mineView(localState(),{orders:[S.trk],threads:[]});
   if(d.error)throw new Error(d.error);
+  if(d.same){trkBusy=false;return}S.trkV=d.version||0;
   const first=!S.trkData;S.trkData=d;S.trkErr='';
   const el=$('#trk');if(!el){trkBusy=false;return}
   const o=(d.orders||[]).find(x=>x.id===S.trk.id),th=o&&(d.threads||[]).find(t=>t.orderId===o.id);
@@ -1363,7 +1439,8 @@ let chatBusy=false;
 async function refreshChat(force){
  if(chatBusy)return;const k=keys();if(!k.threads.length&&!S.chat){S.unread=0;paintAsk();return}
  chatBusy=true;
- try{const d=SHOP.mode==='live'?await api({mine:{orders:[],threads:k.threads}}):L.mineView(localState(),{orders:[],threads:k.threads});
+ try{const d=SHOP.mode==='live'?await api({mine:{orders:[],threads:k.threads},since:force||!S.chatData?0:S.chatV}):L.mineView(localState(),{orders:[],threads:k.threads});
+  if(d.same){chatBusy=false;paintAsk();return}S.chatV=d.version||0;
   if(!d.error){const first=!S.chatData;S.chatData=d;S.unread=S.chat?0:unreadOf(d);
    if(S.chat){const th=chatThread(),box=$('#chat');const cur=box.querySelector('.conv');
     if(first||force&&cur&&cur.dataset.th!==(th?th.id:'new')||!cur){box.innerHTML=chatHTML();scrollMsgs()}else if(th)updateMsgs(th);
@@ -1419,7 +1496,17 @@ function reveals(){if(calm||!('IntersectionObserver' in window))return;if(rvIO)r
 function fly(from){const c=Array.from(document.querySelectorAll('.cart')).find(e=>e.offsetParent);if(!c||!from||!from.getBoundingClientRect)return;const a=from.getBoundingClientRect(),b=c.getBoundingClientRect();if(!a.width)return;const d=document.createElement('div');d.className='fly';d.style.left=(a.left+a.width/2-7)+'px';d.style.top=(a.top+a.height/2-7)+'px';document.body.appendChild(d);
  const an=d.animate([{transform:'translate(0,0) scale(1)'},{transform:`translate(${(b.right-18)-(a.left+a.width/2)}px,${(b.top+b.height/2)-(a.top+a.height/2)}px) scale(.5)`}],{duration:700,easing:'cubic-bezier(.55,0,.25,1)'});
  an.onfinish=()=>{d.remove();c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}}
-function setWay(id){if(S.way===id)return;S.way=id;$$('.wopt').forEach(b=>b.classList.toggle('on',b.dataset.w===id));$$('.wimg').forEach(b=>b.classList.toggle('on',b.dataset.w===id));const wc=$('#wcard');if(wc)wc.innerHTML=wcard(WAYS.find(x=>x.id===id))}
+let wayT,swapT;
+function setWay(id){if(S.way===id)return;S.way=id;$$('.wopt').forEach(b=>b.classList.toggle('on',b.dataset.w===id));$$('.wimg').forEach(b=>b.classList.toggle('on',b.dataset.w===id));
+ const wc=$('#wcard');if(!wc)return;
+ if(calm){wc.innerHTML=wcard(WAYS.find(x=>x.id===id));return}
+ /* fade the words out, swap them, let the card ease to its new height, fade back in */
+ clearTimeout(swapT);wc.classList.add('swap');
+ swapT=setTimeout(()=>{const h0=wc.offsetHeight;wc.style.height=h0+'px';wc.innerHTML=wcard(WAYS.find(x=>x.id===S.way));
+  wc.style.height='auto';const h1=wc.offsetHeight;wc.style.height=h0+'px';void wc.offsetHeight;
+  wc.style.height=h1+'px';requestAnimationFrame(()=>wc.classList.remove('swap'));
+  clearTimeout(wc._t);wc._t=setTimeout(()=>{wc.style.height=''},600)},220)}
+function wayHover(id){clearTimeout(wayT);wayT=setTimeout(()=>setWay(id),120)}
 
 /* per-page effects */
 let io;
@@ -1460,7 +1547,8 @@ window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimation
 window.addEventListener('resize',()=>{if(S.route==='menu')placeInd();sizeGal();onScroll()});
 
 /* ---- events ---- */
-document.addEventListener('mouseover',e=>{const w=e.target.closest('.wopt');if(w&&hoverOK)setWay(w.dataset.w)});
+document.addEventListener('mouseover',e=>{const w=e.target.closest('.wopt');if(w&&hoverOK)wayHover(w.dataset.w)});
+document.addEventListener('mouseout',e=>{const w=e.target.closest('.wopt');if(w&&!w.contains(e.relatedTarget))clearTimeout(wayT)});
 document.addEventListener('focusin',e=>{const w=e.target.closest('.wopt');if(w)setWay(w.dataset.w)});
 document.addEventListener('click',e=>{
  const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,id=b.dataset.id;
@@ -1524,8 +1612,8 @@ window.addEventListener('hashchange',()=>{const was=S.route;route();if(S.route==
 let tick=0;
 setInterval(()=>{if(document.hidden||!SHOP.ready)return;tick++;
  if(S.route==='track')refreshTrack();
- if(S.chat)refreshChat();else if(tick%6===0)refreshChat();
- if(tick%10===0&&SHOP.mode==='live'&&['order','menu'].includes(S.route)&&!S.drawer)api().then(j=>{if(j.view){applyView(j.view);if(S.route==='order')render()}}).catch(()=>{})},3000);
+ if(S.chat)refreshChat();else if(tick%8===0)refreshChat();
+ if(tick%20===0&&SHOP.mode==='live'&&['order','menu'].includes(S.route)&&!S.drawer)api().then(j=>{if(j.view){applyView(j.view);if(S.route==='order')render()}}).catch(()=>{})},1500);
 window.addEventListener('storage',e=>{if(e.key!==LK||SHOP.mode!=='local')return;applyView(L.publicView(localState()));if(S.route==='track')refreshTrack();refreshChat()});
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&SHOP.ready){if(S.route==='track')refreshTrack();refreshChat()}});
 })();

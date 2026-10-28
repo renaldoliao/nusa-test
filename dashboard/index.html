@@ -498,6 +498,40 @@ header.top{background:#fbfaf6}
 @keyframes sout{to{transform:translateX(100%)}}
 #toast{transition:opacity .45s var(--ease),transform .55s var(--ease)}
 .lnk{transition:color .3s,opacity .3s}
+
+/* v10: simpler dashboard */
+.needs{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:4px 0 18px}
+.needs-l{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-right:6px}
+.need{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;border-radius:99px;background:#fff;border:1px solid #e3e6da}
+.need b{font-weight:500}
+.need.hot{background:var(--forest);color:#fff;border-color:var(--forest)}
+.need .pulse{width:8px;height:8px;background:#fff}
+.need:hover{border-color:var(--forest)}
+.wkhead{margin-top:2px}
+.board{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.day{min-height:0;border-radius:16px}
+.dh{padding:14px 18px;background:#fff!important;border-bottom:1px solid #eeeeea}
+.dh .dd{font-size:2.1rem}
+.dh .pt{font-size:.88rem;color:var(--mute)}.dh .pt b{color:var(--ink);font-weight:500}
+.day.today .dh{background:#f3f7ea!important}
+.place{padding:8px 18px;background:#fafaf6}
+.ob{padding:12px 18px;display:grid;gap:4px}
+.ob .nm{font-size:1.05rem;font-weight:500;display:flex;align-items:center;gap:8px}
+.ob .tt{font-weight:400;color:var(--mute)}
+.its1{font-size:.9rem;color:var(--mute);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.ob .chip{justify-self:start;margin-top:4px}
+.nflag{font-size:.66rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--forest);background:#eef2e4;border-radius:99px;padding:1px 7px}
+.ob.pend{background:#f3f7ea}
+.foot{gap:22px}
+.hr{gap:18px}
+:root{--kawung-lt:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23f2eee2%27 stroke-opacity=%270.09%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23f2eee2%27 fill-opacity=%270.09%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--kawung-dk:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23437700%27 stroke-opacity=%270.12%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23437700%27 fill-opacity=%270.12%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--kawung-wh:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2756%27 height=%2756%27 viewBox=%270 0 56 56%27%3E%3Cg fill=%27none%27 stroke=%27%23ffffff%27 stroke-opacity=%270.14%27 stroke-width=%271%27%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 14 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%28-45 42 42%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2742%27 cy=%2714%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 42 14%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%276.5%27 ry=%2713%27 transform=%27rotate%2845 14 42%29%27/%3E%3Cellipse cx=%2714%27 cy=%2742%27 rx=%271.6%27 ry=%275%27 transform=%27rotate%2845 14 42%29%27/%3E%3C/g%3E%3Cg fill=%27%23ffffff%27 fill-opacity=%270.14%27%3E%3Ccircle cx=%2728%27 cy=%2728%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%270%27 r=%272.2%27/%3E%3Ccircle cx=%270%27 cy=%2756%27 r=%272.2%27/%3E%3Ccircle cx=%2756%27 cy=%2756%27 r=%272.2%27/%3E%3C/g%3E%3C/svg%3E");--tumpal:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2718%27 viewBox=%270 0 24 18%27%3E%3Cpath d=%27M0 18 L12 2 L24 18 Z%27 fill=%27%23437700%27/%3E%3Cpath d=%27M6 18 L12 9 L18 18 Z%27 fill=%27none%27 stroke=%27%231a3310%27 stroke-opacity=%27.5%27 stroke-width=%271%27/%3E%3Ccircle cx=%2712%27 cy=%2715%27 r=%271.2%27 fill=%27%231a3310%27 fill-opacity=%27.6%27/%3E%3C/svg%3E");--tumpal-dk:url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724%27 height=%2718%27 viewBox=%270 0 24 18%27%3E%3Cpath d=%27M0 18 L12 2 L24 18 Z%27 fill=%27%231a3310%27/%3E%3Cpath d=%27M6 18 L12 9 L18 18 Z%27 fill=%27none%27 stroke=%27%23437700%27 stroke-opacity=%27.5%27 stroke-width=%271%27/%3E%3Ccircle cx=%2712%27 cy=%2715%27 r=%271.2%27 fill=%27%23437700%27 fill-opacity=%27.6%27/%3E%3C/svg%3E")}
+.lock-top{background:var(--forest) var(--kawung-wh);background-size:56px 56px;position:relative}
+.lock-top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:14px;background:var(--tumpal-dk) repeat-x left bottom;background-size:20px 14px;opacity:.0}
+.hin .logo{background:var(--forest) var(--kawung-wh);background-size:40px 40px}
+header.top{position:sticky}
+header.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--forest),var(--forest))}
+.need.hot{background:var(--forest) var(--kawung-wh);background-size:40px 40px}
+.empty{background:var(--kawung-dk);background-size:56px 56px;border-radius:12px}
 </style>
 </head>
 <body>
@@ -574,7 +608,7 @@ function poll(){
   setSync(!j.error);
   if(j.state&&!SY.busy&&!SY.queue.length)adopt(j.state,j.version)
  }).catch(function(){setSync(false)})}
-setInterval(poll,2000);
+setInterval(poll,1500);
 document.addEventListener("visibilitychange",function(){if(!document.hidden)poll()});
 window.addEventListener("storage",function(e){if(e.key===LK&&SY.mode==="local"&&S){adopt(localLoad(),0)}});
 function markSeen(){SY.seenIds={};S.orders.forEach(function(o){SY.seenIds[o.id]=1});Object.keys(S.threads||{}).forEach(function(k){SY.seenIds["t"+k]=S.threads[k].msgs.length})}
@@ -604,7 +638,7 @@ function keepInputs(fn){
  if(id){var n=document.getElementById(id);if(n){n.focus();if(sel)try{n.setSelectionRange(sel[0],sel[1])}catch(e){}}}
 }
 function setSync(ok){var e=$(".sync");if(!e)return;if(SY.mode==="local"){e.className="sync";e.innerHTML="<i></i>This browser only";e.title="No database is connected yet, so changes stay in this browser. Connect the database in Vercel to sync every phone and computer.";return}
- e.className="sync "+(ok?"on":"off");e.innerHTML="<i></i>"+(ok?"Live on all devices":"Reconnecting");e.title=ok?"Orders, chats and changes sync across every device within 2 seconds.":"Lost the connection. Changes are kept and sent when it comes back."}
+ e.className="sync "+(ok?"on":"off");e.innerHTML="<i></i>"+(ok?"Live":"Reconnecting");e.title=ok?"Orders, chats and changes sync across every device within 2 seconds.":"Lost the connection. Changes are kept and sent when it comes back."}
 
 /* ---------- ui state ---------- */
 var U={tab:"Week",week:0,zoom:null,drawer:null,range:"All time",metric:"Booked",q:"",draft:null,menu:null,showPast:false,just:{},dir:""};
@@ -655,7 +689,7 @@ function appView(){
  root.innerHTML='<header class="top"><div class="hin"><img class="logo" src="'+IMG.logo+'" alt="Nusa">'+
   '<nav id="tabs" aria-label="Sections"></nav>'+
   '<div class="hr"><span class="sync"><i></i></span>'+
-  '<a class="wl" href="'+SITE+'" target="_blank" rel="noopener">Website ↗</a><a href="'+SITE+'#order" target="_blank" rel="noopener">Order page ↗</a><button data-a="out">Sign out</button></div></div></header>'+
+  '<a class="wl" href="'+SITE+'" target="_blank" rel="noopener">View site ↗</a><button data-a="out">Sign out</button></div></div></header>'+
   '<main><div id="view"></div><p class="sampleNote">Includes sample orders for the demo. <button data-a="reset">'+(U.sure==="reset"?"Tap again to reset everything":"Reset sample data")+'</button></p></main>';
  renderTabs();render();setSync(true);
 }
@@ -702,22 +736,14 @@ function isClosed(k){return !!S.closed[k]}
 function weekView(){
  var ix=sizeIndex(),mon=monday(U.week),sun=addDays(mon,6),keys=weekKeys(U.week),h="";
  if(U.week===0){
-  var pend=pendingOrders();
-  if(pend.length){
-   h+='<div class="ban ask" role="alert"><span class="pulse" aria-hidden="true"></span><div class="t"><b>'+plural(pend.length,"online order")+' to confirm</b><span>'+esc(pend.slice(0,3).map(function(o){return o.name+", "+fd(o.date,{weekday:"short"})}).join(" · "))+(pend.length>3?" and "+(pend.length-3)+" more":"")+'</span></div><button class="btn press" data-a="zoom" data-k="'+pend[0].date+"|"+pend[0].point+'">Review</button></div>';
-  } else {
-   var next=S.orders.filter(function(o){return o.status==="new"&&live(o)&&o.date>=TODAY}).sort(function(a,b){return a.date<b.date?-1:1});
-   if(next.length){var d0=next[0].date,p0=next[0].point,same=next.filter(function(o){return o.date===d0&&o.point===p0});
-    h+='<div class="ban gold" role="status"><span class="pulse" aria-hidden="true"></span><div class="t"><b>'+plural(same.length,"order")+' to pack for '+(d0===TODAY?"today":wkd(d0))+', '+PT(p0).name.toLowerCase()+'</b><span>'+esc(same.slice(0,3).map(function(o){return o.name}).join(", "))+(same.length>3?" and "+(same.length-3)+" more":"")+'</span></div><button class="btn press" data-a="zoom" data-k="'+d0+"|"+p0+'">Review</button></div>'}
-  }
-  var um=unreadThreads().length;
-  if(um)h+='<div class="ban dark" role="status"><div class="t"><b>'+plural(um,"unread message")+'</b><span>'+esc(unreadThreads().slice(0,3).map(function(t){return t.name}).join(", "))+'</span></div><button class="btn press" data-tab="Messages">Open</button></div>';
-  var nc=S.catering.filter(function(c){return c.status==="new"}).length;
-  if(nc)h+='<div class="ban dark" role="status"><div class="t"><b>'+plural(nc,"new catering request")+'</b><span>Waiting for a quote</span></div><button class="btn press" data-tab="Catering">Open</button></div>';
+  var pend=pendingOrders(),um=unreadThreads().length,nc=S.catering.filter(function(c){return c.status==="new"}).length,todo=[];
+  if(pend.length)todo.push('<button class="need hot press" data-a="zoom" data-k="'+pend[0].date+"|"+pend[0].point+'" data-o="'+pend[0].id+'"><span class="pulse" aria-hidden="true"></span><b>'+plural(pend.length,"order")+' to confirm</b></button>');
+  if(um)todo.push('<button class="need press" data-tab="Messages"><b>'+plural(um,"new message")+'</b></button>');
+  if(nc)todo.push('<button class="need press" data-tab="Catering"><b>'+plural(nc,"catering request")+'</b></button>');
+  if(todo.length)h+='<div class="needs"><span class="needs-l">Needs you</span>'+todo.join("")+'</div>';
  }
  h+='<div class="wkhead"><h2>'+short(mon)+' to '+short(sun)+(U.week===0?'<small>This week</small>':U.week===1?'<small>Next week</small>':U.week===-1?'<small>Last week</small>':'')+'</h2><div class="wkctl">'+
   (U.week!==0?'<button class="lnk press" data-a="wk0">This week</button>':'')+
-  '<button class="lnk press" data-a="pts">Pickup days</button>'+
   '<button class="btn press" data-a="add">Add an order</button>'+
   '<button class="arr press" data-a="wk" data-d="-1" aria-label="Last week"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>'+
   '<button class="arr press" data-a="wk" data-d="1" aria-label="Next week"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>';
@@ -726,15 +752,15 @@ function weekView(){
   var p=k.split("|"),pt=PT(p[1]),list=groupOrders(k),lv=list.filter(live),isT=p[0]===TODAY,tot=lv.reduce(function(a,o){return a+oTotal(o,ix)},0),cl=isClosed(k),full=pt.cap&&lv.length>=pt.cap&&p[0]>=TODAY;
   h+='<section class="day'+(isT?" today":"")+'" style="animation-delay:'+(ki*.04)+'s"><button class="dh" data-a="zoom" data-k="'+k+'" aria-label="Open '+longd(p[0])+', '+pt.name+'"><span><span class="wd">'+wkd(p[0])+(isT?'<span class="tchip">Today</span>':'')+'</span><span class="dd">'+short(p[0])+'</span></span>'+
    '<span class="pt"><b>'+pt.name+'</b>'+plural(lv.length,"order")+', '+money(tot)+'</span></button>'+
-   '<div class="place">'+esc(pt.place)+(pt.hours?", "+pt.hours:"")+(cl?' <span class="chip warn">Closed online</span>':full?' <span class="chip warn">Full online</span>':p[0]>=TODAY&&pt.cap?' <span class="capn">'+lv.length+' of '+pt.cap+'</span>':'')+'</div><ul class="ol">';
-  list.forEach(function(o){var dim=o.status==="done"||!live(o),th=threadOf(o);
-   h+='<li><button class="ob'+(dim?" dim":"")+(o.pending&&live(o)?" pend":"")+'" data-a="zoom" data-k="'+k+'" data-o="'+o.id+'"><span class="r1"><span class="nm">'+esc(o.name)+unreadDot(th)+'</span><span class="tt">'+money(oTotal(o,ix))+'</span></span><span class="its">'+itemsHTML(o,ix)+'</span>'+
-    (o.note?'<span class="note" style="display:block"><b>Note: </b>'+esc(o.note)+'</span>':'')+
-    '<span class="meta">'+(o.slot&&PT(o.point).slots.length>1?'<span>'+esc(o.slot)+'</span>':'')+(o.loc&&(o.point==="hub"||o.point==="delivery")?'<span>'+esc(o.loc)+'</span>':'')+'<span>'+(o.source==="online"?"From the website":"Added by hand")+'</span>'+(o.paid||!live(o)?'':'<span class="chip warn">Not paid</span>')+chipFor(o)+'</span></button></li>'});
+   (cl||full?'<div class="place"><span class="chip warn">'+(cl?"Closed online":"Full online")+'</span></div>':'')+'<ul class="ol">';
+  list.forEach(function(o){var dim=o.status==="done"||!live(o),th=threadOf(o),pend=o.pending&&o.status==="new"&&live(o);
+   var its=o.items.map(function(i){var l=itemLabel(i,ix);return esc(l.n)+(i.q>1?' ×'+i.q:'')}).join(", ");
+   var st=pend?'<span class="chip ask">Confirm</span>':o.declined?'<span class="chip warn">Declined</span>':o.status==="cancelled"?'<span class="chip warn">Cancelled</span>':o.status==="new"?'':o.status==="packed"?'<span class="chip packed">Packed</span>':'<span class="chip done">'+PT(o.point).done+'</span>';
+   h+='<li><button class="ob'+(dim?" dim":"")+(pend?" pend":"")+'" data-a="zoom" data-k="'+k+'" data-o="'+o.id+'"><span class="r1"><span class="nm">'+esc(o.name)+unreadDot(th)+(o.note?'<span class="nflag" title="Has a note">Note</span>':'')+'</span><span class="tt">'+money(oTotal(o,ix))+'</span></span><span class="its1">'+its+'</span>'+(st||(!o.paid&&live(o)?'':''))+(st?'':'')+'</button></li>'});
   if(!list.length)h+='<li class="empty">No orders yet</li>';
-  h+='</ul><button class="addrow press" data-a="add" data-date="'+p[0]+'" data-pt="'+p[1]+'">+ Add an order</button></section>';
+  h+='</ul></section>';
  });
- h+='</div><p class="foot"><span>Tap a pickup to open it.</span><button class="lnk" data-a="totals">Week totals</button></p>';
+ h+='</div><p class="foot"><span>Tap any order to open it.</span><button class="lnk" data-a="totals">Week totals</button><button class="lnk" data-a="pts">Pickup days</button></p>';
  U.dir="";
  return h;
 }
@@ -752,7 +778,7 @@ function zoomHTML(k){
    '<div class="nm">'+esc(o.name)+chipFor(o)+(o.paid||gone?'':'<span class="chip warn">Not paid</span>')+'</div><div class="its">'+itemsHTML(o,ix,true)+'</div>'+
    (o.note?'<p class="note" style="white-space:pre-line"><b>Note: </b>'+esc(o.note)+'</p>':'')+
    (o.declined?'<p class="note">Told the customer: '+esc(o.declined)+'</p>':'')+
-   '<div class="meta">'+(o.slot?'<span>'+esc(o.slot)+'</span>':'')+(o.loc?'<span>'+esc(o.loc)+'</span>':'')+'<span>'+(o.source==="online"?"From the website":"Added by hand")+'</span>'+(o.phone?'<a href="tel:'+esc(o.phone.replace(/[^\d+]/g,""))+'">'+esc(o.phone)+'</a>':'')+(o.email?'<a href="mailto:'+esc(o.email)+'">'+esc(o.email)+'</a>':'')+'</div></div></div><div class="ea">';
+   '<div class="meta">'+(o.slot?'<span>'+esc(o.slot)+'</span>':'')+(o.loc?'<span>'+esc(o.loc)+'</span>':'')+(o.source==="online"?'':'<span>Added by hand</span>')+(o.phone?'<a href="tel:'+esc(o.phone.replace(/[^\d+]/g,""))+'">'+esc(o.phone)+'</a>':'')+(o.email?'<a href="mailto:'+esc(o.email)+'">'+esc(o.email)+'</a>':'')+'</div></div></div><div class="ea">';
   if(U.decl===o.id){
    h+='<div class="decl"><span class="lab" style="margin:0 0 8px">Tell '+esc(o.name.split(" ")[0])+' why</span><div class="segs">'+["We're fully booked that day.","One of the items is sold out.","That's too short notice for us."].map(function(r){return '<button class="seg press" data-a="dreason" data-r="'+esc(r)+'">'+esc(r)+'</button>'}).join("")+'</div>'+
     '<input class="uin" id="dwhy" placeholder="Or write your own reason" maxlength="300"><div class="dacts"><button class="btn sm press" data-a="decline" data-id="'+o.id+'" style="background:var(--bad)">Send and decline</button><button class="lnk press" data-a="undecl">Keep the order</button></div></div>';

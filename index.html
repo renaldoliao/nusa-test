@@ -1031,6 +1031,19 @@ body{color:var(--ink)}
 .ways.night{background:var(--night) var(--kawung-lt);background-size:56px 56px}
 .lap.dk{background:var(--forest) var(--kawung-wh);background-size:56px 56px}
 .mq{position:relative}
+
+/* chooser rows: fixed height, nothing reflows on hover */
+.wopt{display:block;padding:1.15rem 0;transition:opacity .5s var(--ease)}
+.wopt.on{padding-left:0}
+.wo-in{display:grid;gap:.3rem;transform:translateX(0);transition:transform .7s var(--ease)}
+.wopt.on .wo-in{transform:translateX(1.5rem)}
+.wopt b{white-space:nowrap;font-size:clamp(1.6rem,2.4vw,2.2rem);line-height:1}
+.ways .wopt span.wo-in>span,.wopt .wo-in>span{display:block;text-align:left;font-size:.82rem;letter-spacing:.02em;opacity:.75;white-space:nowrap}
+.wopt::before{top:1.55rem;margin-top:0}
+@media(max-width:560px){.wopt .wo-in>span{display:block}}
+.wopt span.wo-in{display:grid!important;text-align:left;font-size:inherit;opacity:1;justify-items:start}
+.wopt span.wo-in>b{font-size:clamp(1.6rem,2.4vw,2.2rem)}
+@media(max-width:560px){.wopt span.wo-in>b{font-size:1.55rem}.wopt.on .wo-in{transform:translateX(1.1rem)}}
 </style>
 
 <header id="hdr"></header>
@@ -1259,7 +1272,7 @@ pages.home=()=>{
  <div class="wrap hfoot"><div class="hf"><span class="dot${mk&&mk.open?' live':''}"></span><div><b>${mk&&mk.open?'Market open now':'Next market, '+(mk?fmtD(mk.start):'')}</b><span>Ferry Plaza, 8 am to 2 pm</span></div></div><div class="hf"><span class="dot${kt&&kt.open?' live':''}"></span><div><b>Kitchen pickup, ${kt?fmtD(kt.start):''}</b><span>Dogpatch, 5 to 6 pm</span></div></div><div class="hf"><span class="dot"></span><div><b>60+ HubShop spots</b><span>Plus delivery by Neon across the Bay</span></div></div></div></section>
  <div class="mq" aria-hidden="true"><div class="mq-t">${mq}${mq}</div></div>
  <section class="night sec ways"><div class="wrap ways-g"><div><span class="k">Pickup, delivery or catering</span><h2>However you like <em>your Nusa.</em></h2><p class="intro">Choose how you want it. Then it’s one menu and one cart, whichever way you pick.</p>
- <ul class="wlist">${WAYS.map(x=>`<li><button class="wopt${x.id===S.way?' on':''}" data-act="way" data-w="${x.id}"><b>${x.t}</b><span>${x.when}</span></button></li>`).join('')}</ul></div>
+ <ul class="wlist">${WAYS.map(x=>`<li><button class="wopt${x.id===S.way?' on':''}" data-act="way" data-w="${x.id}"><span class="wo-in"><b>${({market:'Ferry Plaza market',kitchen:'Kitchen pickup',hub:'HubShop pickup',delivery:'Delivery',catering:'Catering'})[x.id]||x.t}</b><span>${x.when}</span></span></button></li>`).join('')}</ul></div>
  <div class="wstage">${WAYS.map(x=>`<div class="wimg${x.id===S.way?' on':''}" data-w="${x.id}" ${bg(x.img)}></div>`).join('')}<div class="wcard" id="wcard">${wcard(w)}</div></div></div></section>
  <section class="lt sec"><div class="wrap"><div class="sh"><div><span class="k">New to Indonesian food?</span><h2>Start with <em>these four.</em></h2></div><p>Every dish on our menu says what it tastes like. These are the ones first-timers come back for.</p></div>
  <ul class="dlist" id="dlist">${drow('rendang','rendang','Beef Rendang','Rendang daging')}${drow('custard','custard','Pandan Custard','Ketan srikaya')}${drow('lapis','plates','1000 Layer Cake','Lapis legit')}${drow('sampler','sampler','The Sampler','Four sweets, picked weekly')}</ul>

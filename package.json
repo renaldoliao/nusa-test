@@ -1,0 +1,7 @@
+{
+  "name": "nusa-sf",
+  "private": true,
+  "description": "Nusa website, order pages and owner dashboard",
+  "engines": { "node": ">=18" },
+  "dependencies": { "pg": "^8.13.1" }
+}

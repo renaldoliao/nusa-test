@@ -5,7 +5,7 @@ One site with three connected parts:
 - `index.html`: the website. Customers order, get their own order page that updates by itself, and chat with Nusa ("Ask Nusa" bubble, and a chat on every order page). Catering requests send for real.
 - `dashboard/index.html`: the owner dashboard at `/dashboard`. Password `nusa2026`.
 - `api/` and `lib/`: the small server part that keeps everything in one shared database.
-- `img/` and `fonts/`: compressed photos and the Familjen Grotesk font, served from the site itself so pages load fast.
+- `img/` and `fonts/`: compressed photos and the Brygada 1918 font, served from the site itself so pages load fast.
 
 ## Put it live on Vercel
 

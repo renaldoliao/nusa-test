@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex"><meta name="color-scheme" content="light">
 <title>Nusa Orders</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312241a'/%3E%3Cpath d='M32 10 54 32 32 54 10 32Z' fill='none' stroke='%23cfaa64' stroke-width='3'/%3E%3C/svg%3E">
-<link rel="preload" href="../fonts/familjen-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/brygada-400.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 :root{
  --night:#0b1610;--forest:#12241a;--forest-2:#1b3526;--gold:#cfaa64;--gold-deep:#8d6a2c;--leaf:#2f6b46;
@@ -442,9 +442,10 @@ header.top{background:#fff;color:var(--ink);border-bottom:1px solid #ececec}
 .boot main{padding-top:24px}
 
 /* ===== type system v7: one face for everything ===== */
-@font-face{font-family:"Familjen Grotesk";src:url(../fonts/familjen-400.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Familjen Grotesk";src:url(../fonts/familjen-500.woff2) format("woff2");font-weight:500 700;font-display:swap}
-:root{--serif:"Familjen Grotesk",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--sans:var(--serif);--ease:cubic-bezier(.16,1,.3,1);--bg:#f6f4ee}
+@font-face{font-family:"Brygada 1918";src:url(../fonts/brygada-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Brygada 1918";src:url(../fonts/brygada-500.woff2) format("woff2");font-weight:500 700;font-display:swap}
+:root{--serif:"Brygada 1918",Georgia,serif;--sans:var(--serif);--ease:cubic-bezier(.16,1,.3,1);--bg:#f4f2e9;
+ --forest:#437700;--forest-2:#386400;--primary:#437700;--on-primary:#fff;--gold:#dfe8cc;--accent:#437700;--on-accent:#fff;--gold-deep:#437700;--ink:#17240f;--mute:#59624f;--soft:#eef2e4;--soft-2:#dfe8cc;--ok:#437700;--leaf:#437700}
 html,body{background:var(--bg);letter-spacing:-.005em}
 header.top{background:#fbfaf6}
 .lock h1,.wkhead h2,.dh .dd,.zt h2,.sheet h2,.big,.bl .r,.stats3 b,.ph h2,.H,.cdate b,.qamt,.kpis b,.cvh b,.pth b,.ban b,.serif,.mt input,.nmb,.eid b,.cev .ec .nm{font-weight:400;font-style:normal}
@@ -470,6 +471,20 @@ header.top{background:#fbfaf6}
 .zbox{animation:zin .45s var(--ease) both}
 .sheet{animation:sin .45s var(--ease) both}
 .m{animation-timing-function:var(--ease)}
+
+.lock-top,.hin .logo{background:var(--forest)}
+.chip.ask,.ban.ask .btn{background:#fff;color:var(--forest)}
+.ban.ask{background:var(--forest)}
+.ban.ask .pulse{background:#fff}
+.chip.new{background:#eef2e4;color:#386400}.chip.packed{background:#437700;color:#fff}
+.ob.pend{background:#f3f7ea}.ob.pend:hover{background:#ecf2df}
+.cnt{background:#dfe8cc;color:#2c5000}
+.tabbar{background:var(--forest)}
+.m.me{background:var(--forest);color:#fff}
+.ban.gold{background:#f3f7ea;border-color:#dfe8cc}
+.note{background:#f3f7ea}
+.vb i,.track i{background:#437700}.vb i.cur{background:#8a3d8c}
+.tl button.on{background:#eef2e4}
 </style>
 </head>
 <body>

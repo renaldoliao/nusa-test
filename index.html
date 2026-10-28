@@ -895,6 +895,67 @@ h1,h2,h3{color:inherit}
 .ask{background:var(--night);box-shadow:0 0 0 1px rgba(255,255,255,.35)}
 .badge{background:radial-gradient(circle,rgba(67,119,0,.92) 55%,rgba(67,119,0,.65) 72%,rgba(67,119,0,0) 74%)}
 .wcard dt{color:var(--mute)!important}
+
+/* ===== v9: premium motion and finish ===== */
+:root{--ease:cubic-bezier(.16,1,.3,1);--ease-io:cubic-bezier(.65,0,.35,1)}
+html{scroll-behavior:auto}
+::selection{background:var(--forest);color:#fff}
+.sec{padding-block:clamp(5.5rem,11vw,10rem)}
+/* page changes: a soft fade out, then the new page settles in */
+#app{transition:opacity .26s var(--ease-io),transform .26s var(--ease-io)}
+#app.leaving{opacity:0;transform:translateY(-6px)}
+#app.enter{animation:pg .9s var(--ease) both}
+@keyframes pg{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* hero: the photo opens slowly, the headline rises line by line */
+.hero2{overflow:hidden}
+.hphoto{animation:heroin 1.8s var(--ease) both}
+@keyframes heroin{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+.hero2 .badge{animation:fi 1.2s .9s var(--ease) both}
+.ln>span{animation:up 1.25s var(--ease) both}
+.hero2 .ln:nth-child(1)>span{animation-delay:.25s}.hero2 .ln:nth-child(2)>span{animation-delay:.36s}
+.hcopy .k{animation:fi 1s .15s var(--ease) both}
+.hcopy-row{animation:fi 1s .6s var(--ease) both}
+.hero2 .hfoot{animation:fi 1s .8s var(--ease) both}
+/* scroll reveals */
+.rv2{opacity:0;transform:translateY(22px);transition:opacity 1s var(--ease),transform 1.2s var(--ease);transition-delay:calc(var(--i,0)*80ms)}
+.rv2.in{opacity:1;transform:none}
+.wstage.rv2,.st-ph.rv2{transform:translateY(30px) scale(.985)}
+.wstage.rv2.in,.st-ph.rv2.in{transform:none}
+/* header steps aside while reading, returns on the way up */
+#hdr{transition:transform .6s var(--ease),background .4s}
+#hdr.away{transform:translateY(-100%)}
+.tabs{transition:top .6s var(--ease)}
+body.hdr-away .tabs{top:env(safe-area-inset-top,0px)}
+/* links: a fine underline that draws away and back */
+.tl{text-decoration:none;padding-bottom:.25em;background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .55s var(--ease),color .3s}
+.tl:hover{background-size:0 1px;background-position:100% 100%}
+.tl:hover{color:inherit}
+.foot ul button,.legal button,.more,.back,.share button{transition:opacity .3s,color .3s}
+/* buttons: calm colour change, a small press, a quiet confirmation */
+.btn{transition:background .45s var(--ease),color .45s var(--ease),transform .3s var(--ease),box-shadow .45s var(--ease)}
+.btn:active,.addc:active,.slot:active,.pill:active,.szp button:active,.tile:active{transform:scale(.975)}
+.btn.done{background:var(--forest);color:#fff}
+.btn-ink:hover{background:var(--forest-2)}
+.addc,.slot,.pill,.dtog,.szp button,.tile .im{transition:background .4s var(--ease),color .4s var(--ease),box-shadow .4s var(--ease),transform .3s var(--ease),filter .5s var(--ease)}
+/* the dish list: the name eases over as the photo follows */
+@media(hover:hover){.drow h3{transition:transform .8s var(--ease),color .5s}.drow:hover h3{transform:translateX(.8rem);color:var(--forest)}}
+#follow{transition:opacity .45s var(--ease),transform .7s var(--ease)}
+/* overlays */
+.drawer{transition:transform .7s var(--ease),visibility .7s}
+.scrim,.modal{transition:opacity .5s var(--ease)}
+.mbox{transition:transform .7s var(--ease),opacity .5s var(--ease);opacity:0}
+.modal.on .mbox{opacity:1}
+.chat{transition:transform .6s var(--ease),opacity .45s var(--ease),visibility .6s}
+.toast{transition:transform .6s var(--ease),visibility .6s}
+.mnav{transition:transform .8s var(--ease)}
+.mnav nav button{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .8s var(--ease)}
+.mnav.on nav button{opacity:1;transform:none}
+.mnav.on nav button:nth-child(2){transition-delay:.06s}.mnav.on nav button:nth-child(3){transition-delay:.12s}.mnav.on nav button:nth-child(4){transition-delay:.18s}.mnav.on nav button:nth-child(5){transition-delay:.24s}
+.mq-t{animation-duration:95s}
+.mq:hover .mq-t{animation-play-state:paused}
+.wimg{transition:opacity 1s var(--ease),transform 1.8s var(--ease)}
+.cart.bump b{animation:bump .6s var(--ease)}
+@media(prefers-reduced-motion:reduce){.rv2{opacity:1!important;transform:none!important}#app.leaving{opacity:1;transform:none}}
 </style>
 
 <header id="hdr"></header>
@@ -1342,10 +1403,19 @@ function overlays(){$('#drawer').innerHTML=drawerHTML();$('#drawer').classList.t
 function syncCart(){saveCart();$('#mbar').innerHTML=mbarHTML();$$('.cc').forEach(e=>e.textContent=count());$$('[data-acts]').forEach(el=>{el.innerHTML=actions(byId(el.dataset.acts))});overlays()}
 function render(top){
  $('#hdr').innerHTML=header();
- const app=$('#app');app.innerHTML=pages[S.route]();app.classList.remove('enter');void app.offsetWidth;app.classList.add('enter');
+ const app=$('#app');app.innerHTML=pages[S.route]();app.classList.remove('enter','leaving');void app.offsetWidth;app.classList.add('enter');
  if(S.route!=='home')app.firstElementChild&&app.firstElementChild.classList.contains('ph')||0;
  $('#mbar').innerHTML=mbarHTML();overlays();if(top)window.scrollTo(0,0);post();onScroll();if(S.route==='track')scrollMsgs()}
-function go(r,keep){S.route=r;S.drawer=false;S.mnav=false;S.qv=null;S.co=false;if(r!=='track')S.trk=null;try{history.replaceState(null,'',r==='track'&&S.trk?'#o/'+S.trk.id+'-'+S.trk.token:'#'+(r==='home'?'':r))}catch(e){}render(true);if(r==='order')loadMine().then(()=>{if(S.route==='order'&&S.myOrders.length)render()})}
+function go(r,keep){S.route=r;S.drawer=false;S.mnav=false;S.qv=null;S.co=false;if(r!=='track')S.trk=null;try{history.replaceState(null,'',r==='track'&&S.trk?'#o/'+S.trk.id+'-'+S.trk.token:'#'+(r==='home'?'':r))}catch(e){}leave(()=>render(true));if(r==='order')loadMine().then(()=>{if(S.route==='order'&&S.myOrders.length)render()})}
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+let leaveT;function leave(fn){const app=$('#app');clearTimeout(leaveT);if(calm||!app.firstElementChild){fn();return}app.classList.add('leaving');leaveT=setTimeout(fn,260)}
+/* quiet reveals: things below the fold rise in once, as you reach them */
+let rvIO;
+function reveals(){if(calm||!('IntersectionObserver' in window))return;if(rvIO)rvIO.disconnect();
+ rvIO=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rvIO.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px',threshold:.08});
+ const sel='.sec h2,.sh p,.drow,.pan,.loc,.tray,.mrow,.facts3>div,.wstage,.st-ph,.st-tx>*,.cakewrap,.lap .acts,.lap dl,.gintro,.hire>*,.rev .q,.mcat-h,.dlist+div,.cat-in>div>*,.band,.tiles,.where,.sum,.vis-g,.ft-g>div,.prose>*,.proc>div,.ph h1,.ph .lede,.chero h1,.chero .lede';
+ const h=innerHeight;document.querySelectorAll(sel).forEach(el=>{if(el.classList.contains('rv2'))return;const r=el.getBoundingClientRect();if(r.top<h*.92)return;
+  const sib=[...el.parentElement.children].filter(x=>x.matches(sel));el.style.setProperty('--i',Math.min(6,sib.indexOf(el)%6));el.classList.add('rv2');rvIO.observe(el)})}
 function fly(from){const c=Array.from(document.querySelectorAll('.cart')).find(e=>e.offsetParent);if(!c||!from||!from.getBoundingClientRect)return;const a=from.getBoundingClientRect(),b=c.getBoundingClientRect();if(!a.width)return;const d=document.createElement('div');d.className='fly';d.style.left=(a.left+a.width/2-7)+'px';d.style.top=(a.top+a.height/2-7)+'px';document.body.appendChild(d);
  const an=d.animate([{transform:'translate(0,0) scale(1)'},{transform:`translate(${(b.right-18)-(a.left+a.width/2)}px,${(b.top+b.height/2)-(a.top+a.height/2)}px) scale(.5)`}],{duration:700,easing:'cubic-bezier(.55,0,.25,1)'});
  an.onfinish=()=>{d.remove();c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}}
@@ -1369,7 +1439,7 @@ function post(){
  if(io2)io2.disconnect();
  io2='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.remove('pre');io2.unobserve(e.target)}}),{threshold:.15}):null;
  if(io2)$$('.rv').forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pre');io2.observe(el)}});
- sizeGal();lazyBg();
+ sizeGal();lazyBg();reveals();
 }
 let bgIO;
 function lazyBg(){const els=document.querySelectorAll('[data-bg]');if(!('IntersectionObserver' in window)){els.forEach(showBg);return}
@@ -1380,7 +1450,8 @@ let io2;const pinOK=()=>window.matchMedia('(min-width:861px) and (hover:hover)')
 function sizeGal(){const g=$('#gal'),t=$('#gtrack');if(!g||!t)return;if(!pinOK()){g.style.height='';return}const extra=Math.max(0,t.scrollWidth-innerWidth);g.dataset.extra=extra;g.style.height=(innerHeight+extra)+'px'}
 function placeInd(){const t=$('.tab.on'),ind=$('#tabind'),box=$('#tabs');if(!t||!ind)return;ind.style.left=t.offsetLeft+'px';ind.style.width=t.offsetWidth+'px';const l=t.offsetLeft-box.clientWidth/2+t.offsetWidth/2;box.scrollTo({left:l,behavior:'smooth'})}
 let ticking=false;
-function onScroll(){ticking=false;const h=$('#hdr'),y=window.scrollY;h.classList.toggle('shrunk',y>30);h.classList.toggle('filled',y>30||!['catering','story'].includes(S.route));
+let lastY=0;
+function onScroll(){ticking=false;const h=$('#hdr'),y=window.scrollY;{const away=y>520&&y>lastY+2&&!S.drawer&&!S.mnav;if(away||y<lastY-6||y<520){h.classList.toggle('away',away);document.body.classList.toggle('hdr-away',away)}lastY=y}h.classList.toggle('shrunk',y>30);h.classList.toggle('filled',y>30||!['catering','story'].includes(S.route));
  const p=$('#par');if(p){const r=p.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)p.style.transform=`translateY(${(r.top+r.height/2-innerHeight/2)*-.12}px)`}
  const g=$('#gal');if(g&&pinOK()){const r=g.getBoundingClientRect(),ex=+g.dataset.extra||0,p=Math.min(1,Math.max(0,-r.top/Math.max(1,r.height-innerHeight)));$('#gtrack').style.transform=`translateX(${-p*ex}px)`;const gb=$('#gbar');if(gb)gb.style.width=(p*100)+'%'}
  const rv=$('#reveal');if(rv){const r=rv.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.9-r.top)/(r.height+innerHeight*.4))),ws=rv.querySelectorAll('.w'),n=Math.round(p*ws.length);ws.forEach((w,k)=>w.classList.toggle('on',k<n))}
@@ -1404,7 +1475,7 @@ document.addEventListener('click',e=>{
  case 'slot':S.slot=+b.dataset.i;render();break;
  case 'calnav':S.cal.m+=+b.dataset.n;if(S.cal.m<0){S.cal.m=11;S.cal.y--}if(S.cal.m>11){S.cal.m=0;S.cal.y++}render();break;
  case 'tab':{const s=document.getElementById('cat-'+b.dataset.t);if(s)s.scrollIntoView({behavior:'smooth'});break}
- case 'add':{let k=b.dataset.s;if(!k){const i=byId(id);if(!i||i.out)break;k=defSize(i)}if(!k)break;S.cart[k]=(S.cart[k]||0)+1;syncCart();if(!S.drawer){fly(b);toast(k)}break}
+ case 'add':{let k=b.dataset.s;if(!k){const i=byId(id);if(!i||i.out)break;k=defSize(i)}if(!k)break;S.cart[k]=(S.cart[k]||0)+1;syncCart();if(!S.drawer){fly(b);toast(k)}if(b.isConnected&&b.classList.contains('btn')&&!b.dataset.was){b.dataset.was=b.innerHTML;b.classList.add('done');b.innerHTML='Added to your cart';setTimeout(()=>{if(b.isConnected){b.innerHTML=b.dataset.was;b.classList.remove('done')}delete b.dataset.was},1500)}break}
  case 'qs':S.qs=b.dataset.s;overlays();break;
  case 'co-back':readCo();S.co=false;S.coErr='';overlays();break;
  case 'track':e.preventDefault();openTrack(id,b.dataset.k);break;
